@@ -67,19 +67,6 @@ public class DebugController : MonoBehaviour
 
 			_socket.SendAsync(index + ": Message testing unity android app hang /n"
 									+ "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", onComplete);
-			/*
-			_socket.SendAsync(index + ": Message testing unity android app hang /n"
-							   + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac enim nec eros sagittis"
-							   + " euismod eu nec eros. Vestibulum vel aliquet sapien. Ut suscipit lorem semper nulla interdum,"
-							   + " a posuere ligula lobortis. Curabitur eget convallis elit, ut congue quam. Ut quis congue orci,"
-							   + " vel rhoncus massa. Vestibulum ultrices lectus vel fringilla laoreet. Aenean laoreet mi eget"
-							   + " odio placerat, vitae convallis lorem egestas. Fusce auctor urna arcu, sed tempus sapien iaculis"
-							   + " sit amet. Nulla gravida libero sem, a efficitur justo blandit sed. Fusce semper vehicula risus,"
-							   + " pretium vestibulum ligula pretium ut. Nullam justo lorem, gravida at consectetur euismod,"
-							   + " efficitur nec magna. Morbi placerat tellus et euismod faucibus. Ut in nulla quis velit"
-							   + " imperdiet consequat ut a quam. Fusce a ornare ante. Sed risus tortor, auctor eget tortor"
-							   + " id, pharetra congue odio.", onComplete);
-			*/
 		}
 
 		while (_received < MessagesCount)
