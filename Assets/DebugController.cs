@@ -15,6 +15,7 @@ public class DebugController : MonoBehaviour
 	private Image _image;
 
 	private WebSocket _socket;
+	private volatile bool _pingInProgress = false;
 	private double _lastPing;
 	private double _pingPeriod = 1;
 
@@ -71,8 +72,9 @@ public class DebugController : MonoBehaviour
 
 		while (_received < MessagesCount)
 		{
-			if (Time.realtimeSinceStartup - _lastPing > _pingPeriod)
+			if (!_pingInProgress && (Time.realtimeSinceStartup - _lastPing > _pingPeriod))
 			{
+				_pingInProgress = true;
 				_lastPing = Time.realtimeSinceStartup;
 				PingAsync((pong, crash) =>
 				{
@@ -94,6 +96,8 @@ public class DebugController : MonoBehaviour
 							_failedSendCount = 0;
 						}
 					}
+
+					_pingInProgress = false;
 				});
 			}
 
